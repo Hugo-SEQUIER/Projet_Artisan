@@ -16,7 +16,7 @@ review1 =("""
 Si vous cherchez quelqu'un de sérieux, professionnel et qui fait un travail au rendu remarquable vous avez trouvé votre artisan. Rajoutez à cela de très bon conseil,merci encore pour votre chantier
 """, 5)
 review2 =("""
-J'ai eu affaire à cette entreprise pour de la démolition/désamiantage puis pour la rénovation intérieure totale d'un pavillon: Pour ce qui est de la démolition/désamiantage: je suis satisfait du travail fourni. Ca a été rapide et à un prix plus que compétitif (surtout pour le désamiantage d'un RDC de 67m2/ enlèvement de dalles amiantées. Par contre, pour ce qui est de la rénovation, c'est un désastre total: "malfaçons à tous les étages". Sans que ce soit exhaustif, voici quelques unes des "malfaçons": . Cloisons BA13 montées sans qu'elles soient d'aplomb et qui plus est non vissées sur le rail de sol (peut-être voulait t'il faire des économies de vis) . Aucune des portes posées au niveau de ces cloisons ne ferment correctement (je dois toutes les raboter) . Enduits à proprement parler "dégueulasse" et pour lesquel on m'a demandé une "rallonge" au niveau du prix alors qu'au final, pour ce qui est des plafonds: on voit les bandes sous la fine couche d'enduit et un peu partout la trace du couteau à lisser . Pour ce qui est de l'électricité: le tableau au ss-sol a été remplacé. il y a la barette de terre mais c'est tout: cette barette n'est reliée à aucun piquet de terre et la personne venue installer la Pompe à chaleur n'a pas arrêté de se prendre des coups de jus. J'ai dû moi-même enterrer un piquet de terre et le relier à une barette de mesure puis au tableau. Bref, pour ce qui est de la réno, c'est du travail "à l'économie", bâclé et peu soigneux 
+J'ai eu affaire à cette entreprise pour de la démolition/désamiantage puis pour la rénovation intérieure totale d'un pavillon: Pour ce qui est de la démolition/désamiantage: je suis satisfait du travail fourni. Ca a été rapide et à un prix plus que compétitif (surtout pour le désamiantage d'un RDC de 67m2/ enlèvement de dalles amiantées. Par contre, pour ce qui est de la rénovation, c'est un désastre total: "malfaçons à tous les étages". Sans que ce soit exhaustif, voici quelques unes des "malfaçons": . Cloisons BA13 montées sans qu'elles soient d'aplomb et qui plus est non vissées sur le rail de sol (peut-être voulait t'il faire des économies de vis) . Aucune des portes posées au niveau de ces cloisons ne ferment correctement (je dois toutes les raboter) . Enduits à proprement parler "dégueulasse" et pour lesquel on m'a demandé une "rallonge" au niveau du prix alors qu'au final, pour ce qui est des plafonds: on voit les bandes sous la fine couche d'enduit et un peu partout la trace du couteau à lisser . Pour ce qui est de l'électricité: le tableau au ss-sol a été remplacé. il y a la barette de terre mais c'est tout: cette barette n'est reliée à aucun piquet de terre et la personne venue installer la Pompe à chaleur n'a pas arrêté de se prendre des coups de jus. J'ai dû moi-même enterrer un piquet de terre et le relier à une barette de mesure puis au tableau. Bref, pour ce qui est de la réno, c'est du travail "à l'économie", baclé et peu soigneux 
 """, 2)
 listReview = [review0, review1, review2]
 
@@ -28,7 +28,7 @@ listeCompleteArtisanNegatif = dict()
 nlp = spacy.load("fr_core_news_sm")
 def get_hotwords(text):
     result = []
-    pos_tag = ['ADJ'] 
+    pos_tag = ['ADJ', 'NOUN'] 
     doc = nlp(text.lower()) 
     for token in doc:
         if(token.text in nlp.Defaults.stop_words or token.text in punctuation):
